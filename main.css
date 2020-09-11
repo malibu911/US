@@ -68,7 +68,6 @@ html {
   margin-right: 4px;
   content: '';
   display: block;
-  position: static;
   height: 42px;
   width: 42px;
   background: url("../img/svg/mark_star.svg") 50% 50%/contain no-repeat;
@@ -128,7 +127,7 @@ html {
 .slider__arrow.slick-disabled {
   background-color: #808080;
 }
-.slider__arrow:hover {
+.slider__arrow:hover:not(.slick-disabled) {
   opacity: 0.5;
 }
 .slider__arrow_left {
@@ -163,9 +162,4 @@ html {
 }
 .slider__dots .slick-active button {
   background: #444;
-}
-@media screen and (max-width: 840px) {
-  .slider__arrow {
-    display: none;
-  }
 }

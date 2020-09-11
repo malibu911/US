@@ -3,7 +3,7 @@ $(".slider").slick({
   speed: 300,
   slidesToShow: 4,
   initialSlide: 1,
-  arrpws: true,
+  arrows: true,
   nextArrow: ".slider__arrow_right",
   prevArrow: ".slider__arrow_left",
   dotsClass: "slider__dots",
@@ -13,6 +13,7 @@ $(".slider").slick({
       breakpoint: 1024,
       settings: {
         slidesToShow: 2,
+        arrows: true,
       },
     },
     {
