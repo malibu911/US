@@ -1,0 +1,169 @@
+
+accent = #c4c4c4;
+
+body, html {
+    overflow-x: hidden;
+    min-width: 320px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 0 24px;
+    max-width: 1140px;
+    width: 100%;
+    position: relative;
+    // 0-18
+    // 0-12
+}
+
+.slider {
+    height: 453px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 222px;
+        left: 0;
+        width: 100vw;
+        height: 1px;
+        background-color: accent;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin 0 -30px
+    }
+
+    &__item {
+        height: 453px;
+        width: 25%;
+        box-sizing: border-box;
+        padding: 0 30px;
+    }
+
+    &__head {
+        height: 222px;
+        padding-bottom: 30px;
+        display: flex;
+    }
+
+    &__date {
+        margin-top: auto;
+        font-size: 35px;
+        font-weight: bold;
+        color: #4F4F4F;
+        position: relative;
+        display: flex;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+        }
+
+        &::before {
+            height: 10px;
+            width: 10px;
+            background: url('../img/svg/ring.svg') 50% 50% / contain no-repeat;
+            transform: translate(-50%, 50%);
+            z-index: 2;
+        }
+
+        &::after {
+            width: 1px;
+            transform: translateX(-50%);
+            background-color: accent;
+        }
+
+        &_star {
+            &::before {
+                margin-right: 4px;
+                content: '';
+                display: block;
+                position: static;
+                height: 42px;
+                width: 42px;
+                background: url('../img/svg/mark_star.svg') 50% 50% / contain no-repeat;
+            }
+        }
+
+        &_s {
+            margin-left: 106px;
+            padding-bottom: 46px;
+
+            &::after {
+                height: 37px;
+            }
+        }
+
+        &_m {
+            margin-left: 58px;
+            padding-bottom: 67px;
+
+            &::after {
+                height: 58px;
+            }
+        }
+
+        &_l {
+            margin-left: 57px;
+            padding-bottom: 79px;
+
+            &::after {
+                height: 66px;
+            }
+        }
+
+        &_xl {
+            margin-left: 76px;
+            padding-bottom: 103px;
+
+            &::after {
+                height: 91px;
+            }
+        }
+    }
+
+    &__texts {
+        color: #949494;
+    }
+
+    &__text {
+        font-size: 15px;
+
+        &_note {
+            margin-top: 15px;
+            font-size: 12px;
+            font-style: italic;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 164px;
+        height: 40px;
+        width: 40px;
+        background: red url('../img/svg/arrow.svg') 50% 50% / 16px 24px no-repeat;
+        cursor: pointer;
+        transition: opacity 0.4s ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &_left {
+            left: 24px;
+        }
+
+        &_right {
+            right: 24px;
+            transform: rotate(-180deg);
+        }
+    }
+}

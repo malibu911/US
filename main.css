@@ -1,0 +1,138 @@
+body,
+html {
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 1140px;
+  width: 100%;
+  position: relative;
+}
+.slider {
+  height: 453px;
+  position: relative;
+}
+.slider::before {
+  content: '';
+  position: absolute;
+  top: 222px;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: #c4c4c4;
+  z-index: 0;
+  pointer-events: none;
+}
+.slider__items {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -30px;
+}
+.slider__item {
+  height: 453px;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0 30px;
+}
+.slider__head {
+  height: 222px;
+  padding-bottom: 30px;
+  display: flex;
+}
+.slider__date {
+  margin-top: auto;
+  font-size: 35px;
+  font-weight: bold;
+  color: #4f4f4f;
+  position: relative;
+  display: flex;
+}
+.slider__date::before,
+.slider__date::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+.slider__date::before {
+  height: 10px;
+  width: 10px;
+  background: url("../img/svg/ring.svg") 50% 50%/contain no-repeat;
+  transform: translate(-50%, 50%);
+  z-index: 2;
+}
+.slider__date::after {
+  width: 1px;
+  transform: translateX(-50%);
+  background-color: #c4c4c4;
+}
+.slider__date_star::before {
+  margin-right: 4px;
+  content: '';
+  display: block;
+  position: static;
+  height: 42px;
+  width: 42px;
+  background: url("../img/svg/mark_star.svg") 50% 50%/contain no-repeat;
+}
+.slider__date_s {
+  margin-left: 106px;
+  padding-bottom: 46px;
+}
+.slider__date_s::after {
+  height: 37px;
+}
+.slider__date_m {
+  margin-left: 58px;
+  padding-bottom: 67px;
+}
+.slider__date_m::after {
+  height: 58px;
+}
+.slider__date_l {
+  margin-left: 57px;
+  padding-bottom: 79px;
+}
+.slider__date_l::after {
+  height: 66px;
+}
+.slider__date_xl {
+  margin-left: 76px;
+  padding-bottom: 103px;
+}
+.slider__date_xl::after {
+  height: 91px;
+}
+.slider__texts {
+  color: #949494;
+}
+.slider__text {
+  font-size: 15px;
+}
+.slider__text_note {
+  margin-top: 15px;
+  font-size: 12px;
+  font-style: italic;
+}
+.slider__arrow {
+  position: absolute;
+  top: 164px;
+  height: 40px;
+  width: 40px;
+  background: #f00 url("../img/svg/arrow.svg") 50% 50%/16px 24px no-repeat;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+.slider__arrow:hover {
+  opacity: 0.5;
+}
+.slider__arrow_left {
+  left: 24px;
+}
+.slider__arrow_right {
+  right: 24px;
+  transform: rotate(-180deg);
+}
