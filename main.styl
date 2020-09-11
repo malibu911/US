@@ -1,24 +1,21 @@
 
-accent = #c4c4c4;
+$accent = #c4c4c4;
 
 body, html {
-    overflow-x: hidden;
+    height: 100%;
     min-width: 320px;
+    overflow-x: hidden;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 .wrapper {
     margin: 0 auto;
-    padding: 0 24px;
     max-width: 1140px;
     width: 100%;
     position: relative;
-    // 0-18
-    // 0-12
 }
 
-.slider {
-    height: 453px;
+.slider-section {
     position: relative;
 
     &::before {
@@ -28,22 +25,19 @@ body, html {
         left: 0;
         width: 100vw;
         height: 1px;
-        background-color: accent;
+        background-color: $accent;
         z-index: 0;
         pointer-events: none;
     }
+}
 
-    &__items {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 -30px;
-    }
-
+.slider {
     &__item {
         height: 453px;
         width: 25%;
         box-sizing: border-box;
         padding: 0 30px;
+        outline: none;
     }
 
     &__head {
@@ -78,7 +72,7 @@ body, html {
         &::after {
             width: 1px;
             transform: translateX(-50%);
-            background-color: accent;
+            background-color: $accent;
         }
 
         &_star {
@@ -153,17 +147,66 @@ body, html {
         cursor: pointer;
         transition: opacity 0.4s ease;
 
+        // если закоментить, то стрелки пропадут, пока не станут нужны
+        &.slick-hidden {
+            display: block;
+            outline: none;
+        }
+
+        &.slick-disabled {
+            background-color: gray;
+        }
+
         &:hover {
             opacity: 0.5;
         }
 
         &_left {
-            left: 24px;
+            left: 30px;
         }
 
         &_right {
-            right: 24px;
+            right: 30px;
             transform: rotate(-180deg);
+        }
+    }
+}
+
+.slider__dots {
+    margin: 15px auto 0;
+    padding: 0;
+    text-align center
+    width: 100%;
+    list-style: none;
+    display: none;
+
+    li {
+        display: inline-block;
+        padding: 6px;
+        vertical-align: top;
+    }
+
+    button {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #888888;
+        padding: 0;
+        font-size: 0;
+        border: 0;
+    }
+
+    .slick-active button {
+        background: #444444;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .slider {
+
+        &__arrow {
+            display: none;
         }
     }
 }
